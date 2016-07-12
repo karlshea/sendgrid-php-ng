@@ -1006,7 +1006,9 @@ class Email {
     ];
 
     // TMP
-    $web['template_id'] = '0459acb6-1380-4f6c-a9c8-e1185b2a9688';
+    $this->smtpapi->addFilter('templates', 'enable', 1);
+    $this->smtpapi->addFilter('templates', 'template_id', '0459acb6-1380-4f6c-a9c8-e1185b2a9688');
+
 
     if (!empty($this->smtpapi->jsonString()) || $this->smtpapi->jsonString() != '{}') {
       $web['x-smtpapi'] = $this->smtpapi->jsonString();
